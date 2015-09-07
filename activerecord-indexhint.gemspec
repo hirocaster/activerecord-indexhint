@@ -28,4 +28,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "pry"
   spec.add_development_dependency "pry-byebug"
   spec.add_development_dependency "awesome_print"
+  spec.add_development_dependency "mysql2"
+  spec.add_development_dependency "database_rewinder"
 end
