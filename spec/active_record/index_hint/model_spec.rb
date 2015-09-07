@@ -33,5 +33,17 @@ describe "ActiveRecord::IndexHint::Model" do
     it "has force_index method" do
       expect(User.respond_to? :force_index).to be true
     end
+
+    context "Give one hint" do
+      it "`FORCE INDEX` in SQL Query" do
+        expect(User.force_index("PRIMARY").to_sql).to be_include "FROM `users` FORCE INDEX (PRIMARY)"
+      end
+    end
+
+    context "Give two hint" do
+      it "`FORCE INDEX` in SQL Query" do
+        expect(User.force_index("index_users_on_name", "PRIMARY").to_sql).to be_include "FROM `users` FORCE INDEX (index_users_on_name, PRIMARY)"
+      end
+    end
   end
 end
