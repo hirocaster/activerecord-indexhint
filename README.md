@@ -1,6 +1,6 @@
 # Activerecord::Indexhint
 
-[![Build Status](https://travis-ci.org/hirocaster/activerecord-indexhint.svg?branch=master)](https://travis-ci.org/hirocaster/activerecord-indexhint)
+[![Build Status](https://travis-ci.org/hirocaster/activerecord-indexhint.svg?branch=master)](https://travis-ci.org/hirocaster/activerecord-indexhint) [![Coverage Status](https://coveralls.io/repos/hirocaster/activerecord-slave/badge.svg?branch=master&service=github)](https://coveralls.io/github/hirocaster/activerecord-slave?branch=master) [![Code Climate](https://codeclimate.com/github/hirocaster/activerecord-indexhint/badges/gpa.svg)](https://codeclimate.com/github/hirocaster/activerecord-indexhint) [![Dependency Status](https://gemnasium.com/hirocaster/activerecord-indexhint.svg)](https://gemnasium.com/hirocaster/activerecord-indexhint)
 
 Add method, index hint(use/ignore/force index) for ActiveRecord(MySQL).
 

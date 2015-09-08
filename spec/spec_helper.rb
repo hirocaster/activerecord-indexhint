@@ -1,3 +1,17 @@
+require "simplecov"
+require "coveralls"
+require "codeclimate-test-reporter"
+Coveralls.wear!
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
+  SimpleCov::Formatter::HTMLFormatter,
+  Coveralls::SimpleCov::Formatter,
+  CodeClimate::TestReporter::Formatter
+]
+SimpleCov.start do
+  add_filter "/spec"
+  add_filter "/vendor"
+end
+
 $LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
 require "activerecord-indexhint"
 require "pry"
