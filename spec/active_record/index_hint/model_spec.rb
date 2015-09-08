@@ -39,6 +39,18 @@ describe "ActiveRecord::IndexHint::Model" do
         expect { User.ignore_index nil }.to raise_error ActiveRecord::IndexHint::StatementInvalid
       end
     end
+
+    context "Give two hint" do
+      it "`IGNORE INDEX` in SQL Query" do
+        expect(User.ignore_index("index_users_on_name", "PRIMARY").to_sql).to be_include "FROM `users` IGNORE INDEX (index_users_on_name, PRIMARY)"
+      end
+    end
+
+    context "nil in hints" do
+      it "Deleted nil, `IGNORE INDEX` in SQL Query" do
+        expect(User.ignore_index("index_users_on_name", nil, "PRIMARY").to_sql).to be_include "FROM `users` IGNORE INDEX (index_users_on_name, PRIMARY)"
+      end
+    end
   end
 
   describe ".force_index" do
@@ -58,7 +70,7 @@ describe "ActiveRecord::IndexHint::Model" do
       end
     end
 
-    context "Give one hint" do
+    context "Give two hint" do
       it "`FORCE INDEX` in SQL Query" do
         expect(User.force_index("index_users_on_name", "PRIMARY").to_sql).to be_include "FROM `users` FORCE INDEX (index_users_on_name, PRIMARY)"
       end
