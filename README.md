@@ -1,5 +1,7 @@
 # Activerecord::Indexhint
 
+[![Build Status](https://travis-ci.org/hirocaster/activerecord-indexhint.svg?branch=master)](https://travis-ci.org/hirocaster/activerecord-indexhint)
+
 Add method, index hint(use/ignore/force index) for ActiveRecord(MySQL).
 
 ## Installation
