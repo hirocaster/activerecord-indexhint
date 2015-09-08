@@ -1,6 +1,6 @@
 # Activerecord::Indexhint
 
-TODO: Write a gem description
+Add method, index hint(use/ignore/force index) for ActiveRecord(MySQL).
 
 ## Installation
 
@@ -18,11 +18,25 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+class User < ActiveRecord::Base
+end
+
+index_name = "index_users_on_name"
+
+User.use_index(index_name).where(name: "foo")
+# => "SELECT `users`.* FROM `users` USE INDEX (index_users_on_name) WHERE `users`.`name` = 'foo'"
+
+User.ignore_index(index_name).where(name: "foo")
+# => "SELECT `users`.* FROM `users` IGNORE INDEX (index_users_on_name) WHERE `users`.`name` = 'foo'"
+
+User.force_index(index_name).where(name: "foo")
+# => "SELECT `users`.* FROM `users` FORCE INDEX (index_users_on_name) WHERE `users`.`name` = 'foo'"
+```
 
 ## Contributing
 
-1. Fork it ( http://github.com/<my-github-username>/activerecord-indexhint/fork )
+1. Fork it ( http://github.com/hirocaster/activerecord-indexhint/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)

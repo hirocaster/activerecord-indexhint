@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = ActiveRecord::IndexHint::VERSION
   spec.authors       = ["hirocaster"]
   spec.email         = ["hohtsuka@gmail.com"]
-  spec.summary       = "Add index hints method to ActiveRecord"
-  spec.description   = "Add index hints method to ActiveRecord"
+  spec.summary       = "Add index hints method(use/ignore/force index) to ActiveRecord"
+  spec.description   = "Add index hints method(use/ignore/force index) to ActiveRecord"
   spec.homepage      = ""
   spec.license       = "MIT"
 
