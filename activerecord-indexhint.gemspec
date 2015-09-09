@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["hohtsuka@gmail.com"]
   spec.summary       = "Add index hints method(use/ignore/force index) to ActiveRecord"
   spec.description   = "Add index hints method(use/ignore/force index) to ActiveRecord"
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/hirocaster/activerecord-indexhint/"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
